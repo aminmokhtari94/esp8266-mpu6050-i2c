@@ -1,0 +1,9 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/amin/work/esp-rtos/i2c-mpu6050'
+make: Leaving directory '/home/amin/work/esp-rtos/i2c-mpu6050'
+ 
+Makefile:8: /make/project.mk: No such file or directory
+make: *** No rule to make target '/make/project.mk'.
+make: Failed to remake makefile '/make/project.mk'.
+make: *** No targets.  Stop.
+

@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "AVA-GPS",
+            "includePath": [
+                "${workspaceRoot}/main/**",
+                "${workspaceRoot}/components/**",
+                "${env:IDF_PATH}/components/**"
+            ],
+            "defines": [
+                "NDEBUG",
+                "__BSD_VISIBLE",
+                "__XSI_VISIBLE=500",
+                "LOG_LOCAL_LEVEL=ESP_LOG_VERBOSE",
+                "CONFIG_LOG_TIMESTAMP_SOURCE_RTOS",
+                "CONFIG_FREERTOS_HZ=100"
+            ],
+            "compilerPath": "${env:HOME}/work/esp-rtos/xtensa-lx106-elf/bin/xtensa-lx106-elf-g++",
+            "cStandard": "c99",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "gcc-x64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "configurationProvider": "vector-of-bool.cmake-tools"
+        }
+    ],
+    "version": 4
+}
