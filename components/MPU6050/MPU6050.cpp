@@ -2789,7 +2789,7 @@ uint32_t MPU6050_Base::getFIFOTimeout() { return fifoTimeout; }
  */
 void MPU6050_Base::setFIFOTimeout(uint32_t fifoTimeout) { this->fifoTimeout = fifoTimeout; }
 
-uint32_t current_timestamp() { return xTaskGetTickCount() * portTICK_PERIOD_MS; }
+uint32_t current_timestamp() { return xTaskGetTickCount() * (1000000 / configTICK_RATE_HZ); }
 /** Get latest byte from FIFO buffer no matter how much time has passed.
  * ===                  GetCurrentFIFOPacket                    ===
  * ================================================================
@@ -2803,7 +2803,6 @@ int8_t MPU6050_Base::GetCurrentFIFOPacket(uint8_t *data,
   // This section of code is for when we allowed more than 1 packet to be
   // acquired
   uint32_t BreakTimer = current_timestamp();
-  ESP_LOGI("BreakTimer", "%d\n", BreakTimer);
   bool packetReceived = false;
   do {
     if ((fifoC = getFIFOCount()) > length) {
@@ -2835,7 +2834,6 @@ int8_t MPU6050_Base::GetCurrentFIFOPacket(uint8_t *data,
         }
       }
     }
-    printf("fifoC: %d\n", fifoC);
     if (!fifoC)
       return 0; // Called too early no data or we timed out after FIFO Reset
     // We have 1 packet
@@ -3317,8 +3315,8 @@ void MPU6050_Base::setDMPConfig2(uint8_t config) { I2Cdev::writeByte(devAddr, MP
 //***************************************************************************************
 //**********************           Calibration Routines **********************
 //***************************************************************************************
-uint32_t map(uint32_t au32_IN, uint32_t au32_INmin, uint32_t au32_INmax, uint32_t au32_OUTmin, uint32_t au32_OUTmax) {
-  return ((((au32_IN - au32_INmin) * (au32_OUTmax - au32_OUTmin)) / (au32_INmax - au32_INmin)) + au32_OUTmin);
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 /**
   @brief      Fully calibrate Gyro from ZERO in about 6-7 Loops 600-700 readings
@@ -3376,7 +3374,7 @@ void MPU6050_Base::PID(uint8_t ReadAddress, float kP, float kI, uint8_t Loops) {
   }
   for (int L = 0; L < Loops; L++) {
     eSample = 0;
-    for (int c = 0; c < 10; c++) { // 100 PI Calculations
+    for (int c = 0; c < 100; c++) { // 100 PI Calculations
       eSum = 0;
       for (int i = 0; i < 3; i++) {
         I2Cdev::readWord(devAddr, ReadAddress + (i * 2),

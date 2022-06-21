@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/amin/work/esp-rtos/i2c-mpu6050'
 make: Leaving directory '/home/amin/work/esp-rtos/i2c-mpu6050'
  

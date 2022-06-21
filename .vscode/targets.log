@@ -1,7 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-Makefile:8: /make/project.mk: No such file or directory
-make: *** No rule to make target '/make/project.mk'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -9,7 +6,7 @@ make: *** No rule to make target '/make/project.mk'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 12 16:31:36 2022
+# Make data base, printed on Tue Jun 21 08:45:31 2022
 
 # Variables
 
@@ -24,15 +21,13 @@ PROJECT_NAME := app-template
 # environment
 CHROME_EXECUTABLE = google-chrome-stable
 # environment
-I3SOCK = /run/user/1000/sway-ipc.1000.1065.sock
+I3SOCK = /run/user/1000/sway-ipc.1000.1079.sock
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7ddff77c-3c9b-4072-84c4-79f585cb750b.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7ffd0889-2270-4e66-8a31-71069818d17c.sock
 # environment
-VSCODE_CWD = /home/amin/work/esp-rtos/i2c-mpu6050
+VSCODE_CWD = /home/amin
 # environment
-SWAYSOCK = /run/user/1000/sway-ipc.1000.1065.sock
-# environment
-NVM_DIR = /home/amin/.nvm
+SWAYSOCK = /run/user/1000/sway-ipc.1000.1079.sock
 # default
 MAKE_COMMAND := make
 # automatic
@@ -46,11 +41,7 @@ PWD = /home/amin/work/esp-rtos/i2c-mpu6050
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
 MAIL = /var/spool/mail/amin
-# environment
-OLDPWD = /home/amin/work/esp-rtos/i2cdevlib
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -58,11 +49,7 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-ALACRITTY_SOCKET = /run/user/1000/Alacritty-wayland-1-2225504.sock
-# environment
-NVM_INC = /home/amin/.nvm/versions/node/v14.17.4/include/node
-# environment
-VSCODE_CODE_CACHE_PATH = /home/amin/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /home/amin/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
@@ -78,7 +65,7 @@ CURDIR := /home/amin/work/esp-rtos/i2c-mpu6050
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -86,13 +73,9 @@ MFLAGS = -prR
 # default
 .SHELLFLAGS := -c
 # environment
-NVM_BIN = /home/amin/.nvm/versions/node/v14.17.4/bin
-# environment
 WAYLAND_DISPLAY = wayland-1
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# environment
-P9K_SSH = 0
 # environment
 XDG_SESSION_DESKTOP = 
 # makefile (from 'Makefile', line 1)
@@ -100,11 +83,9 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-ZSH = /home/amin/.oh-my-zsh
-# environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 1734
+VSCODE_PID = 1930
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -118,8 +99,6 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-P9K_TTY = old
-# environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 ANDROID_SDK_ROOT = /opt/android-sdk
@@ -132,7 +111,7 @@ SHELL = /bin/sh
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 3
+SHLVL = 1
 # environment
 MAKELEVEL := 0
 # default
@@ -140,7 +119,7 @@ MAKE = $(MAKE_COMMAND)
 # environment
 FLUTTER_HOME = /opt/flutter
 # environment
-PATH = /home/amin/.autojump/bin:/home/amin/.nvm/versions/node/v14.17.4/bin:/home/amin/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/cmdline-tools/latest/bin:/opt/flutter/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/amin/.fzf/bin
+PATH = /home/amin/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/cmdline-tools/latest/bin:/opt/flutter/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 # default
 MAKEFILES := 
 # environment
@@ -156,21 +135,13 @@ VSCODE_LOG_NATIVE = false
 # automatic
 ?F = $(notdir $?)
 # environment
-AUTOJUMP_SOURCED = 1
-# environment
 XDG_SEAT = seat0
 # environment
 XDG_CURRENT_DESKTOP = 
-# environment
-ALACRITTY_LOG = /tmp/Alacritty-2225504.log
-# environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:
 # automatic
 +F = $(notdir $+)
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
-# environment
-LESS = -R
 # environment
 DESKTOP_SESSION = sway
 # environment
@@ -186,8 +157,6 @@ XDG_VTNR = 2
 # makefile
 .DEFAULT_GOAL := 
 # environment
-AUTOJUMP_ERROR_PATH = /home/amin/.local/share/autojump/errors.log
-# environment
 DISPLAY = :1
 # environment
 USER = amin
@@ -196,17 +165,11 @@ MAKE_VERSION := 4.3
 # environment
 DEBUGINFOD_URLS = https://debuginfod.archlinux.org 
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1708
-# environment
-PAGER = less
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1913
 # environment
 _ = /usr/bin/make
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# environment
-COLORTERM = truecolor
-# environment
-NVM_CD_FLAGS = -q
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -216,9 +179,9 @@ HOME = /home/amin
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-fd20610c-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-fd20610c-1.68.1-main.sock
 # environment
-TERM = xterm-256color
+TERM = alacritty
 # environment
 XDG_SESSION_ID = 2
 # environment
@@ -227,12 +190,8 @@ XCURSOR_SIZE = 24
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
-# environment
-AMPY_PORT = /dev/ttyUSB0
 # default
 SUFFIXES := 
-# environment
-_P9K_TTY = /dev/pts/5
 # environment
 VSCODE_CLI = 1
 # environment
@@ -240,7 +199,7 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
 # variable set hash-table stats:
-# Load=113/1024=11%, Rehash=0, Collisions=6/140=4%
+# Load=94/1024=9%, Rehash=0, Collisions=4/121=3%
 
 # Pattern-specific Variable Values
 
@@ -248,11 +207,10 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 
 # Directories
 
-# . (device 2050, inode 7226728): 13 files, no impossibilities.
+# . (device 2050, inode 7226728): 14 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
- 
 # Implicit Rules
 
 # No implicit rules.
@@ -292,12 +250,15 @@ all:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 190 B / avg = 10 B
-# current buf: size = 8162 B / used = 190 B / count = 19 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 195 B / avg = 9 B
+# current buf: size = 8162 B / used = 195 B / count = 20 / avg = 9 B
 
-# strcache performance: lookups = 24 / hit rate = 20%
+# strcache performance: lookups = 25 / hit rate = 20%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=0/24=0%
-# Finished Make data base on Sun Jun 12 16:31:36 2022
+# Load=20/8192=0%, Rehash=0, Collisions=0/25=0%
+# Finished Make data base on Tue Jun 21 08:45:31 2022
 
  
+Makefile:8: /make/project.mk: No such file or directory
+make: *** No rule to make target '/make/project.mk'.  Stop.
+
