@@ -156,7 +156,7 @@ void task_display(void *) {
   packetSize = mpu.dmpGetFIFOPacketSize();
   printf("%d\n", packetSize);
 
-  mpu.setIntZeroMotionEnabled(false);
+  mpu.setIntZeroMotionEnabled(true);
   mpu.setIntMotionEnabled(false);
 
   mpu.setDHPFMode(MPU6050_DHPF_0P63);
@@ -171,21 +171,15 @@ void task_display(void *) {
 
   while (1) {
     if (mpu.GetCurrentFIFOPacket(fifoBuffer, packetSize)) {
-      mpu.dmpGetAccel(accel, fifoBuffer);
-      mpu.dmpGetGravity(grav, fifoBuffer);
-
-      mpu.getAcceleration(&accel_raw[0], &accel_raw[1], &accel_raw[2]);
+      // mpu.getAcceleration(&accel_raw[0], &accel_raw[1], &accel_raw[2]);
       mpu.dmpGetQuaternion(&q, fifoBuffer);
       mpu.dmpGetGravity(&gravity, &q);
       mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
-      // mpu.setZeroMotionDetectionThreshold(5);
-      printf("%d   ypr: %d, ", mpu.getFIFOCount(), (int)(ypr[0] * 180 / M_PI));
-      printf("%d, ", (int)(ypr[1] * 180 / M_PI));
-      printf("%d --  %.5d\t%.5d\t%.5d\t\n", (int)(ypr[2] * 180 / M_PI), grav[0], grav[1], grav[2]);
+      printf("z:%d,m:%d\t", mpu.getZeroMotionDetected(),
+             (mpu.getXNegMotionDetected() || mpu.getYNegMotionDetected() || mpu.getZNegMotionDetected()));
+      printf("ypr: %d, %d, %d\n", (int)(ypr[0] * 180 / M_PI), (int)(ypr[1] * 180 / M_PI), (int)(ypr[2] * 180 / M_PI));
     }
-    // printf("%d - %d %d %d\n", mpu.getZeroMotionDetected(), mpu.getXNegMotionDetected(), mpu.getYNegMotionDetected(),
-    //        mpu.getZNegMotionDetected());
-    vTaskDelay(10 / portTICK_PERIOD_MS);
+    vTaskDelay(20 / portTICK_PERIOD_MS);
   }
 
   vTaskDelete(NULL);
